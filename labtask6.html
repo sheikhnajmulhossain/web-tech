@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>University Admission Form</title>
+</head>
+<body>
+
+<h1>University Admission Form</h1>
+
+<form action="#" method="post">
+
+  <fieldset>
+    <legend>Personal Information</legend>
+
+    <p>
+      <label for="fullname">Full Name:</label><br>
+      <input type="text" id="fullname" name="fullname" required maxlength="50">
+    </p>
+
+    <p>
+      <label for="email">Email Address:</label><br>
+      <input type="email" id="email" name="email" required>
+    </p>
+
+    <p>
+      <label for="phone">Phone Number:</label><br>
+      <input type="text" id="phone" name="phone" maxlength="15">
+    </p>
+
+    <p>
+      Gender:<br>
+      <input type="radio" id="male" name="gender" value="Male" required>
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="female">Female</label><br>
+      <input type="radio" id="other" name="gender" value="Other">
+      <label for="other">Other</label>
+    </p>
+
+    <p>
+      <label for="dob">Date of Birth:</label><br>
+      <input type="date" id="dob" name="dob">
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Academic Information</legend>
+
+    <p>
+      <label for="hsc_institution">Last Institution Attended:</label><br>
+      <input type="text" id="hsc_institution" name="hsc_institution" required maxlength="60">
+    </p>
+
+    <p>
+      <label for="hsc_year">Passing Year:</label><br>
+      <input type="text" id="hsc_year" name="hsc_year" maxlength="4">
+    </p>
+
+    <p>
+      <label for="hsc_result">Result (GPA):</label><br>
+      <input type="text" id="hsc_result" name="hsc_result" maxlength="5">
+    </p>
+
+    <p>
+      <label for="department">Preferred Department:</label><br>
+      <select id="department" name="department" required>
+        <option value="">-- Select Department --</option>
+        <option value="cse">Computer Science and Engineering</option>
+        <option value="eee">Electrical and Electronic Engineering</option>
+        <option value="bba">Business Administration</option>
+        <option value="eng">English</option>
+      </select>
+    </p>
+
+    <p>
+      Interests (select all that apply):<br>
+      <input type="checkbox" id="interest_cs" name="interests" value="Computers">
+      <label for="interest_cs">Computers &amp; Programming</label><br>
+      <input type="checkbox" id="interest_sports" name="interests" value="Sports">
+      <label for="interest_sports">Sports</label><br>
+      <input type="checkbox" id="interest_music" name="interests" value="Music">
+      <label for="interest_music">Music</label><br>
+      <input type="checkbox" id="interest_art" name="interests" value="Art">
+      <label for="interest_art">Art</label>
+    </p>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Required Documents</legend>
+
+    <p>
+      <label for="photo">Upload Passport-size Photo:</label><br>
+      <input type="file" id="photo" name="photo">
+    </p>
+
+    <p>
+      <label for="transcript">Upload Academic Transcript:</label><br>
+      <input type="file" id="transcript" name="transcript">
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Submit Application</legend>
+
+    <p>
+      <input type="submit" value="Submit Form">
+      <input type="reset" value="Reset Form">
+    </p>
+  </fieldset>
+
+</form>
+
+</body>
+</html>
