@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.student-item {
+    margin: 8px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.btn-edit {
+    margin-left: 10px;
+    background: #4caf50;
+    color: white;
+    padding: 4px 10px;
+    border: none;
+}
+
+.btn-delete {
+    margin-left: 5px;
+    background: #f44336;
+    color: white;
+    padding: 4px 10px;
+    border: none;
+}
+
+.highlight {
+    background-color: yellow;
+}
