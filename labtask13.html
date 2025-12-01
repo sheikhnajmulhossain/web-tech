@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background: #f3f3f3;
+        }
+
+        .old {
+            background-color: lightgray;
+        }
+
+        .new {
+            background-color: lightgreen;
+        }
+
+        input {
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Library Management System</h2>
+
+    Book Title: <input type="text" id="title">
+    Publication Year: <input type="text" id="year">
+    <button id="addBtn">Add Book</button>
+
+    <h3>Book List</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody id="bookTable"></tbody>
+    </table>
+
+    <script>
+        document.getElementById('addBtn').addEventListener('click', function () {
+            let title = document.getElementById('title').value.trim();
+            let year = document.getElementById('year').value.trim();
+            let currentYear = new Date().getFullYear();
+
+            for (let i = 0; i < title.length; i++) {
+                let ch = title[i];
+                if (!(ch >= 'A' && ch <= 'Z') && !(ch >= 'a' && ch <= 'z')) {
+                    alert("Title must contain only letters.");
+                    return;
+                }
+            }
+            let row = document.createElement('tr');
+            row.className = year < 2000 ? "old" : "new";
+
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+
+            td1.textContent = title;
+            td2.textContent = year;
+
+            row.appendChild(td1);
+            row.appendChild(td2);
+
+            document.getElementById('bookTable').appendChild(row);
+
+            document.getElementById('title').value = "";
+            document.getElementById('year').value = "";
+        });
+    </script>
+
+</body>
+
+</html>
