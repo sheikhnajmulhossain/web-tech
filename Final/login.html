@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        h2 { text-align: center; margin-bottom: 10px; }
+        label { display: block; margin-top: 8px; font-size: 14px; }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+        }
+        button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 9px;
+            border: none;
+            border-radius: 20px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .message {
+            margin-top: 8px;
+            font-size: 13px;
+            text-align: center;
+            color: #dc2626;
+        }
+        .link {
+            margin-top: 6px;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Login</h2>
+
+    <label>Email / Username</label>
+    <input id="user" placeholder="admin@trackback.top or admin">
+
+    <label>Password</label>
+    <input id="pass" type="password" placeholder="Track@b1">
+
+    <button onclick="doLogin()">Login</button>
+
+    <div id="msg" class="message"></div>
+
+    <p class="link">
+        No account?
+        <a href="registration.php">Register here</a>
+    </p>
+</div>
+
+<script>
+    function doLogin() {
+        var user = document.getElementById("user").value.trim();
+        var pass = document.getElementById("pass").value;
+        var msg  = document.getElementById("msg");
+
+        msg.style.color = "#dc2626";
+        msg.innerHTML = "";
+
+        if (user === "" || pass === "") {
+            msg.innerHTML = "Please fill in all fields.";
+            return;
+        }
+
+        if (user.indexOf("@") !== -1) {
+            if (user.indexOf("@") < 1 || user.indexOf(".") < 3) {
+                msg.innerHTML = "Please enter a valid email.";
+                return;
+            }
+        }
+
+        var correctEmail = "admin@trackback.top";
+        var correctUser  = "admin";
+        var correctPass  = "Track@b1";
+
+        if ((user === correctEmail || user === correctUser) && pass === correctPass) {
+            msg.style.color = "#16a34a";
+            msg.innerHTML = "Login successful!";
+        } else {
+            msg.innerHTML = "Wrong email/username or password.";
+        }
+    }
+</script>
+</body>
+</html>
